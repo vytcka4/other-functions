@@ -16,10 +16,19 @@ const poll = {
     const answer = Number(
       prompt(`${this.question}\n${this.options.join("\n")}`)
     );
-    if (typeof answer === "number" && answer > 3) {
+    if (typeof answer === "number" && answer < 4) {
       this.answers[answer]++;
-      console.log(this.answers);
+      // console.log(this.answers);
     }
+    const displayResults = (type) => {
+      type = this.answers;
+      if (typeof type === "string") {
+        console.log(`result ${type}`);
+      } else {
+        console.log(type);
+      }
+    };
+    return displayResults();
   },
 };
 
